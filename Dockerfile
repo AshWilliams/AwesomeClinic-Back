@@ -1,8 +1,13 @@
 FROM python:3.6.1-alpine
 
-WORKDIR /backend
-ADD . /backend
+WORKDIR /app
 
-RUN pip install -r requirements.txt
+COPY requirements.txt requirements.txt
 
-CMD ["python","app.py"]
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+COPY . .
+
+ENV FLASK_APP=backend.py
+
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
