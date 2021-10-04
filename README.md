@@ -1,5 +1,7 @@
 # AwesomeClinic-Back
 
+Download or fork this repository to your local machine.     
+
 Docker Image Name: `ashwilliams/awesome-clinic-backend:flask` 
 
 Windows Powershell ENV Variables:    
