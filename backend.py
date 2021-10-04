@@ -10,6 +10,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def profile():
     return jsonify({'name':'Robert Rozas Navarro',
                     'phone':'+56 9 5811 9900',
+                    'email':'robert.rozas.n@gmail.com',
                     'address':'Middle of Nowhere, Chile',
                     'member_since':'July 2012'})
 
