@@ -1,13 +1,38 @@
 from flask import jsonify,Flask
 from flask_cors import CORS, cross_origin
+from flasgger import Swagger
 
 app = Flask(__name__)
+swagger = Swagger(app)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/profile/')
 @cross_origin()
 def profile():
+    """Example endpoint returning a luser profile
+    This is using docstrings for specifications.
+    ---
+    parameters:
+      - name: none
+        in: path
+        required: false
+    definitions:
+      profile:
+        type: json object
+        properties:
+          name:
+            type: string  
+    responses:
+      200:
+        description: A user profile        
+        examples:
+                    {'name':'Robert Rozas Navarro',
+                    'phone':'+56 9 5811 9900',
+                    'email':'robert.rozas.n@gmail.com',
+                    'address':'Middle of Nowhere, Chile',
+                    'member_since':'July 2012'}
+    """
     return jsonify({'name':'Robert Rozas Navarro',
                     'phone':'+56 9 5811 9900',
                     'email':'robert.rozas.n@gmail.com',

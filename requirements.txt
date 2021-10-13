@@ -1,2 +1,4 @@
+setuptools
 flask
 flask-cors
+flasgger
