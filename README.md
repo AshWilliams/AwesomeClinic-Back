@@ -16,6 +16,8 @@ Run the app:
 
 Head to `localhost:5000/profile/` or `localhost:5000/appointments/` to check out the application    
 
+To check the OpenApi documentation: `http://localhost/apidocs/` 
 
 Run tests:
 `python .\backend.test.py -v`
+

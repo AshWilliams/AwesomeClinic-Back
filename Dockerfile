@@ -1,13 +1,10 @@
-FROM python:3.6.1-alpine
+FROM python:3.6.12-alpine
 
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
+COPY requirements.txt /
+RUN pip3 install -r /requirements.txt
 
-RUN pip install --upgrade pip && pip install -r requirements.txt
+COPY . /app
 
-COPY . .
-
-ENV FLASK_APP=backend.py
-
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT ["./gunicorn.sh"]

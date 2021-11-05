@@ -2,3 +2,4 @@ setuptools
 flask
 flask-cors
 flasgger
+gunicorn==20.0.4
