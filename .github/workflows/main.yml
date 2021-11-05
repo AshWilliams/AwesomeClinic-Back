@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push
       uses: docker/build-push-action@v2
-        with:
+      with:
           push: true
           tags: ashwilliams/awesome-clinic-backend:flask
     
