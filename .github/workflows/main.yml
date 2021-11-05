@@ -25,11 +25,17 @@ jobs:
           tags: ashwilliams/awesome-clinic-backend:flask
     
     # Set the target Azure Kubernetes Service (AKS) cluster. 
-    - uses: azure/aks-set-context@v1
+    # - uses: azure/aks-set-context@v1
+    #   with:
+    #     creds: '${{ secrets.AZURE_CREDENTIALS }}'
+    #     cluster-name: ${{ env.CLUSTER_NAME }}
+    #     resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+
+    - uses: azure/k8s-set-context@v1
       with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: ${{ env.CLUSTER_NAME }}
-        resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+        method: kubeconfig
+        kubeconfig: ${{ secrets.KUBE_CONFIG }} # Use secret (https://developer.github.com/actions/managing-workflows/storing-secrets/)
+
     
     # Create namespace if doesn't exist
     - run: |
