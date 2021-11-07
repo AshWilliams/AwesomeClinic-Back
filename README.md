@@ -1,5 +1,10 @@
 # AwesomeClinic-Back
 
+##Azure
+
+Create Service Principal
+`az ad sp create-for-rbac --name "GHActions" --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP> --sdk-auth`
+
 Download or fork this repository to your local machine.     
 
 Docker Image Name: `ashwilliams/awesome-clinic-backend:flask` 

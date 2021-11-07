@@ -31,12 +31,14 @@ def profile():
                     'phone':'+56 9 5811 9900',
                     'email':'robert.rozas.n@gmail.com',
                     'address':'Middle of Nowhere, Chile',
+                    'org':'Pycon Chile 2021',
                     'member_since':'July 2012'}
     """
     return jsonify({'name':'Robert Rozas Navarro',
                     'phone':'+56 9 5811 9900',
                     'email':'robert.rozas.n@gmail.com',
                     'address':'Middle of Nowhere, Chile',
+                    'org':'Pycon Chile 2021',
                     'member_since':'July 2012'})
 
 @app.route('/appointments/')
